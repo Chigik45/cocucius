@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "build": "docker-compose up --build",
+        "build": "",
         "test": "",
         "start": "node index.js"
     },
