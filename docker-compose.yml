@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: user1
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: my5db
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
