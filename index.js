@@ -76,7 +76,14 @@ app.get('/add', async (req, res) => {
     res.send("Error " + err);
   }
 });
-
+app.get('/get', async (req, res) => {
+    try {
+      res.send(generateJoke());
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  });
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
